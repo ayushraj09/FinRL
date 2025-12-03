@@ -776,4 +776,5 @@ class AdaptivePortfolioTradingEnv(gym.Env):
     def get_sb_env(self):
         """Get environment wrapped in DummyVecEnv for Stable-Baselines3"""
         env = DummyVecEnv([lambda: self])
-        return env
+        obs = env.reset()
+        return env, obs
